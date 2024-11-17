@@ -1,0 +1,32 @@
+.btn {
+    cursor: pointer;
+}
+
+.btn-link, .btn-success, .btn-cancel {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 10px !important;
+    border: none;
+    color: white;
+}
+
+.btn-link:hover, .btn-success:hover {
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-link {
+    background-color: transparent;
+}
+
+.btn-success {
+    background-color: #408c4b;
+}
+
+.btn-cancel {
+    background-color: #f7f7f7;
+}
+
+.btn-dark {
+    color: #333;
+}

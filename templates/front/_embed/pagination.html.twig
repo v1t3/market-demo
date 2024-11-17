@@ -1,0 +1,17 @@
+{% if itemsLen > pageSize %}
+    <div class="pagination">
+        &laquo;&nbsp;
+        {% if previous >= 0 %}
+            <a href="{{ path(pathName, { offset: previous }) }}">Назад</a>
+        {% else %}
+            <span>Назад</span>
+        {% endif %}
+        &nbsp;|&nbsp;
+        {% if next < itemsLen %}
+            <a href="{{ path(pathName, { offset: next }) }}">Далее</a>
+        {% else %}
+            <span>Далее</span>
+        {% endif %}
+        &nbsp;&raquo;
+    </div>
+{% endif %}

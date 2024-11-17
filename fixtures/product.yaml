@@ -1,0 +1,66 @@
+App\Entity\Product:
+  product_fruits_banana:
+    title: "Бананы"
+    price: <randomFloat(2, 50.00, 300.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_fruits'
+    isPublished: 1
+    description: <ru_RU:paragraph(3)>
+  product_fruits_apple:
+    title: "Яблоки"
+    price: <randomFloat(2, 50.00, 300.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_fruits'
+    isPublished: 1
+    description: <paragraph(3)>
+  product_fruits_ananas:
+    title: "Ананасы"
+    price: <randomFloat(2, 50.00, 300.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_fruits'
+    isPublished: 1
+    description: <paragraph(3)>
+
+  product_fruits_potato:
+    title: "Картошка"
+    price: <randomFloat(2, 10.00, 100.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_vegetables'
+    isPublished: 1
+    description: <paragraph(3)>
+  product_fruits_tomato:
+    title: "Помидоры"
+    price: <randomFloat(2, 100.00, 200.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_vegetables'
+    isPublished: 1
+    description: <paragraph(3)>
+  product_fruits_paprika:
+    title: "Сладкий перец"
+    price: <randomFloat(2, 100.00, 500.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_vegetables'
+    isPublished: 1
+    description: <paragraph(3)>
+
+  product_fruits_chips:
+    title: "Чипсы"
+    price: <randomFloat(2, 100.00, 200.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_snacks'
+    isPublished: 1
+    description: <paragraph(3)>
+  product_fruits_suhariki:
+    title: "Сухарики"
+    price: <randomFloat(2, 10.00, 200.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_snacks'
+    isPublished: 1
+    description: <paragraph(3)>
+  product_fruits_cola:
+    title: "Кока-кола"
+    price: <randomFloat(2, 100.00, 400.00)>
+    quantity: <numberBetween(1, 100)>
+    category: '@category_snacks'
+    isPublished: 1
+    description: <paragraph(3)>

@@ -1,0 +1,32 @@
+{% extends 'front/base.html.twig' %}
+
+{% block title %}Category - {{ element.title }}{% endblock %}
+{% block page_keywords %}{{ element.title|lower }}{% endblock %}
+{% block page_description %}{{ element.description }}!{% endblock %}
+
+{% block body %}
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-lg-12">
+                {% include 'front/_embed/breadcrumbs.html.twig' with {'breadcrumbs': [
+                    {'href':path('main_homepage'), 'text':'Главная'},
+                    {'href':path('app_article_list'), 'text':'Статьи'},
+                    {'href':'', 'text': element.title}
+                ]} %}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12 mb-2">
+                <div class="page-title2">
+                    <a class="page-title">{{ element.title }}</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div>{{ element.description | raw }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

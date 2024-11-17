@@ -1,0 +1,127 @@
+{% extends 'admin/layout/layout_main.html.twig' %}
+
+{% block title_detailed %}{{ 'admin.articles.add'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            {% include 'admin/_embed/_card/_breadcrumbs.html.twig' with {
+                'sectionTitle': 'Статьи',
+                'entity': article,
+                'actionUrl': path('admin_article_list'),
+            } %}
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="main-tab" data-toggle="tab" data-target="#main-panel"
+                            type="button" role="tab" aria-controls="main-panel" aria-selected="true">
+                        Главная
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="content-tab" data-toggle="tab" data-target="#content-panel"
+                            type="button" role="tab" aria-controls="content-panel" aria-selected="true">
+                        Контент
+                    </button>
+                </li>
+            </ul>
+            <br>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="main-panel" role="tabpanel" aria-labelledby="main-tab">
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.active) }}</div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.active) }}
+                            <div class="form-error">{{ form_errors(form.active) }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.activeFrom) }}</div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.activeFrom) }}
+                            <div class="form-error">{{ form_errors(form.activeFrom) }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.activeTo) }}</div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.activeTo) }}
+                            <div class="form-error">{{ form_errors(form.activeTo) }}</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.title) }}</div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.title) }}
+                            <div class="form-error">{{ form_errors(form.title) }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.code) }}</div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.code) }}
+                            <div class="form-error">{{ form_errors(form.code) }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="content-panel" role="tabpanel" aria-labelledby="content-tab">
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.previewImageFile) }}</div>
+                        <div class="col-md-10">
+                            <div class="col-md-4 custom-file">
+                                {{ form_widget(form.previewImageFile) }}
+                                <label class="custom-file-label" for="validatedPreviewFile">Выбрать новый файл</label>
+                                <div class="invalid-feedback">{{ form_errors(form.previewImageFile) }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.preview) }}</div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.preview) }}
+                            <div class="form-error">{{ form_errors(form.preview) }}</div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.detailImageFile) }}</div>
+                        <div class="col-md-10">
+                            <div class="col-md-4 custom-file">
+                                {{ form_widget(form.detailImageFile) }}
+                                <label class="custom-file-label" for="validatedPreviewFile">Выбрать новый
+                                    файл</label>
+                                <div class="invalid-feedback">{{ form_errors(form.detailImageFile) }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-2">{{ form_label(form.description) }}</div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.description) }}
+                            <div class="form-error">{{ form_errors(form.description) }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+
+            {% include 'admin/_embed/_card/_form_buttons.html.twig' with {
+                'entity':article,
+                'catalogUrl':path('admin_article_list'),
+                'submitBtn':form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}),
+            } %}
+
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

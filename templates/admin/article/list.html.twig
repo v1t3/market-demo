@@ -1,0 +1,75 @@
+{% extends 'admin/layout/layout_main.html.twig' %}
+{# @var uploadService \App\Service\UploadService #}
+
+{% block title_detailed %}{{ 'admin.articles.title'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            {% include 'admin/_embed/_card/_header_action.html.twig' with {
+                'sectionTitle': 'admin.articles.title'|trans,
+                'actionUrl': path('admin_article_add')
+            } %}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="main_table">
+                    <thead>
+                    <tr>
+                        <th>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Is Active'|trans, 'a.active') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Title'|trans, 'a.title') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Slug', 'a.code') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Preview'|trans, 'a.preview') }}</th>
+                        <th>{{ knp_pagination_sortable(pagination, 'Preview image'|trans, 'a.previewImage') }}</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for article in pagination %}
+                        <tr>
+                            <td>{{ article.id }}</td>
+                            <td>
+                                <i class="fas fa-check fa-sm"
+                                   style="color: {% if article.active %}green{% else %}lightgray{% endif %};"></i>
+                            </td>
+                            <td>{{ article.title }}</td>
+                            <td>{{ article.code }}</td>
+                            <td>{{ article.preview }}</td>
+                            <td>
+                                {% if article.previewImage|length %}
+                                    <img src="{{ uploadPath }}{{ article.previewImage }}" alt="" style="max-width: 150px;">
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{{ path('admin_article_edit', {'id': article.id}) }}"
+                                   class="btn btn-outline-info">{{ 'Edit'|trans }}</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        const filterVisibilityBtnElement = document.getElementById('article_list_filters_btn');
+        const filterVisibilityBlockElement = document.getElementById('article_list_filters_block');
+        const filterSection = 'article_list';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            filterVisibilityBtnElement.addEventListener('click', () => {
+                toggleFiltersVisibility(filterSection);
+                changeFiltersBlockView(filterSection, filterVisibilityBlockElement);
+            });
+            changeFiltersBlockView(filterSection, filterVisibilityBlockElement);
+        });
+    </script>
+{% endblock %}

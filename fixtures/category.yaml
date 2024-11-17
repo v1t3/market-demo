@@ -1,0 +1,10 @@
+App\Entity\Category:
+  category_fruits:
+    title: Фрукты
+    slug: fruits
+  category_vegetables:
+    title: Овощи
+    slug: vegetables
+  category_snacks:
+    title: Снеки
+    slug: snacks

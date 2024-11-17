@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title>{% block title %}{{ 'site.name'|trans }}{% endblock %}</title>
+
+    <meta name="keywords" content="{% block page_keywords %}{% endblock %}">
+    <meta name="description" content="{% block page_description %}{{ 'site.name'|trans }}{% endblock %}">
+
+    {% block canonical_link %}{% endblock %}
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('build/images/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('build/images/favicon/favicon-16x16.png') }}">
+    <link rel="shortcut icon" href="{{ asset('build/images/favicon/favicon.ico') }}">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="{{ asset('build/images/favicon/browserconfig.xml') }}">
+    <meta name="theme-color" content="#ffffff">
+
+    {{ encore_entry_link_tags('section-front') }}
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+<div class="page-wrapper">
+    {% include 'front/_embed/_header.html.twig' %}
+
+    <main class="main">
+        {% include 'front/_embed/_utils/_flash_message.html.twig' %}
+        {% block body %}{% endblock %}
+    </main>
+
+    {% include 'front/_embed/_footer.html.twig' %}
+</div>
+
+{{ encore_entry_script_tags('section-front') }}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

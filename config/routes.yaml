@@ -1,0 +1,21 @@
+controllers:
+  resource: ../src/Controller/
+  type: annotation
+
+controllers_robots_txt:
+  resource: ../src/Controller/RobotsTxtController.php
+  type: annotation
+  format: txt
+  requirements:
+    _format: txt
+
+controllers_sitemap:
+  resource: ../src/Controller/SitemapController.php
+  type: annotation
+  format: xml
+  requirements:
+    _format: xml
+
+kernel:
+  resource: ../src/Kernel.php
+  type: annotation

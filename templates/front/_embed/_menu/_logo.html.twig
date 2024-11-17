@@ -1,0 +1,5 @@
+{% if logo|length %}
+    <img src="{{ logo }}" alt="{{ name }}" class="logo">
+{% else %}
+    <img src="{{ asset('build/images/default-logo.jpg') }}" alt="{{ name }}" class="logo">
+{% endif %}

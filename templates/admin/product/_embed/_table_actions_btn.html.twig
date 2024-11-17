@@ -1,0 +1,6 @@
+<button type="submit" class="btn btn-outline-secondary">
+    {{ 'Apply'|trans }}
+</button>
+<a href="{{ path(app.request.attributes.get('_route')) }}" class="btn btn-outline-secondary">
+    {{ 'Reset'|trans }} {{ 'Filters'|trans|lower }}
+</a>

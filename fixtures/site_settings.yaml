@@ -1,0 +1,5 @@
+App\Entity\SiteSettings:
+  site_settings:
+    name: "Фруктовощ"
+    domain: "Example.com"
+    active: 1

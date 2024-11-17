@@ -1,0 +1,73 @@
+{% extends 'admin/layout/layout_main.html.twig' %}
+
+{% block title_detailed %}Настройки{% endblock %}
+
+{% block body %}
+    <h1>Основные настройки</h1>
+    <div class="card-body">
+        {{ form_start(form) }}
+
+        <div class="form-group row">
+            <div class="col-md-1">
+                {{ form_label(form.active) }}
+            </div>
+            <div class="col-md-11">
+                {{ form_widget(form.active) }}
+                <div class="form-error">
+                    {{ form_errors(form.active) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-1">
+                {{ form_label(form.name) }}
+            </div>
+            <div class="col-md-11">
+                {{ form_widget(form.name) }}
+                <div class="form-error">
+                    {{ form_errors(form.name) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-1">
+                {{ form_label(form.logo) }}
+            </div>
+            <div class="col-md-11">
+                {{ form_widget(form.logo) }}
+                <div class="form-error">
+                    {{ form_errors(form.logo) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                {% if form.logoFilename.vars.data %}
+                    <img src="{{ asset('/uploads/images/' ~ form.logoFilename.vars.data) }}"
+                         alt=""
+                         style="width: auto; max-width: 100%;">
+                {% endif %}
+            </div>
+        </div>
+        {% if form.logoFilename == true %}
+            {% do form.logoFilename.setRendered() %}
+        {% endif %}
+
+        <div class="form-group row">
+            <div class="col-md-1">
+                {{ form_label(form.domain) }}
+            </div>
+            <div class="col-md-11">
+                {{ form_widget(form.domain) }}
+                <div class="form-error">
+                    {{ form_errors(form.domain) }}
+                </div>
+            </div>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

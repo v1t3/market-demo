@@ -1,0 +1,205 @@
+site:
+  name: '1Овощ'
+
+homepage:
+  head: 'Главная страница'
+  description: 'Главная страница "1Овощ"'
+
+auth:
+  sing_up: Зарегистрироваться
+  login: Войти
+  logout: Выйти
+  reset_password: 'Сбросить пароль'
+
+registration_form:
+  head: Регистрация
+  enter_your_email: 'Адрес электронной почты'
+  enter_your_password: Пароль
+  agree_to_term: 'Я согласен с'
+  'privacy policy': 'политикой конфиденциальности*'
+  placeholder.email: 'Пожалуйста, введите свой адрес электронной почты'
+  placeholder.plainPassword: 'Пожалуйста, введите свой пароль'
+
+login_form:
+  head: Авторизация
+  your_email: 'Адрес электронной почты'
+  your_password: Пароль
+  remember_me: 'Запомнить меня'
+  placeholder.email: 'Пожалуйста, введите свой адрес электронной почты'
+  placeholder.password: 'Пожалуйста, введите свой пароль'
+
+personal_account:
+  head: 'Добро пожаловать в ЛК'
+  message: 'Прежде чем сделать заказ, заполните полную информацию.'
+  edit_profile: 'Редактировать ЛК'
+  resending_verify_email_link: 'Подтвердите свой email'
+  verify_email_link_send: 'Письмо с подтверждением отправлено! Проверьте email.'
+  dashboard: 'Панель управления'
+  labels:
+    email: 'Адрес электронной почты'
+    full_name: ФИО
+    phone: Телефон
+    address: Адрес
+    zipcode: 'Почтовый индекс'
+  edit:
+    head: 'Редактировать ЛК'
+    labels.full_name: 'Введите ФИО'
+    labels.phone: 'Введите телефон'
+    labels.address: 'Введите адрес'
+    labels.zipcode: 'Введите почтовый индекс'
+    save_changes: 'Сохранить изменения'
+
+similar_products:
+  head: 'Мы рекомендуем'
+  new: Новинка
+
+product:
+  add_to_cart: 'Добавить в корзину'
+  quantity: Количество
+  currency: Руб
+  new: Новинка
+  products_not_found: 'Продукты не найдены'
+
+category:
+  show_me: Перейти
+  new_collection: 'Новая коллекция'
+  unique: 'Уникальное предложение'
+
+cart:
+  head: Корзина
+  make_order: 'Сделать заказ'
+  view_cart: Перейти
+  checkout: Отчистить
+  total_price: Всего
+  cart_empty: 'В корзине нет товаров...'
+  product: Продукт
+  quantity: Количество
+  price: Цена
+  actions: Действия
+  total: Всего
+
+header_menu:
+  products: Товары
+  articles: Статьи
+  profile: Профиль
+
+footer:
+  user_links:
+    head: 'Полезные ссылки'
+    homepage: 'Главная страница'
+  my_account:
+    head: 'Личный кабинет'
+    view_cart: 'Просмотреть корзину'
+    my_profile: 'Мой профиль'
+  change_language:
+    head: 'Сменить язык'
+    russian: Русский
+    english: Английский
+  copyright: 'Авторское право © Команда RankedChoice. все права защищены.'
+
+admin:
+  title: 'Панель управления'
+  to_main_site: 'Перейти на основной сайт'
+  list: 'Список'
+  add_item: 'Добавить элемент'
+  sales_list:
+    block: 'Продажи'
+  orders:
+    title: 'Заказы'
+  blog_list:
+    block: 'Блог'
+  articles:
+    title: 'Статьи'
+    add: 'Добавление статьи'
+    edit: 'Редактирование статьи'
+  products_list:
+    block: 'Товары'
+  products:
+    title: 'Товары'
+  categories:
+    title: 'Категории'
+    detail: 'Категория'
+  user_list:
+    block: 'Пользователи'
+    title: 'Список пользователей'
+    add_item: 'Добавить пользователя'
+    edit: Редактировать
+    not_verified: 'Не проверено'
+    verified: Проверено
+    id: Id
+    email: Почта
+    role: Роль
+    profile_info: Информация
+    is_verified_email: 'Почта проверена'
+  settings:
+    block: 'Настройки'
+
+site_settings:
+  title: 'Общие настройки'
+  form:
+    save: Сохранить
+  fields:
+    active: 'Сайт активен'
+    name: 'Название сайта'
+    logo: 'Логотип'
+    domain: 'Домен'
+
+'You have to login in order to access this page.': 'Вам необходимо войти в систему, чтобы получить доступ к этой странице.'
+'An email has been sent. Please check inbox to find password and verified your email': 'Было отправлено электронное письмо. Пожалуйста, проверьте входящие, чтобы найти пароль и подтвердить свой адрес электронной почты'
+'Please log in to the site!': 'Пожалуйста, авторизуйтесь на сайте!'
+'The order successfully created': 'Заказ успешно создан'
+'An email has been sent. Please check your inbox to complete registration.': 'Было отправлено электронное письмо. Пожалуйста, проверьте свой почтовый ящик, чтобы завершить регистрацию.'
+'Your email address has been verified.': 'Ваш адрес электронной почты был подтвержден.'
+'Your changes were saved!': 'Ваши изменения были сохранены!'
+'Something went wrong. Please check!': 'Что-то пошло не так. Пожалуйста, проверьте!'
+'New password': 'Новый пароль'
+'Repeat Password': 'Повторите пароль'
+plainPassword: 'пароль (plainPassword)'
+'Created At': 'Дата создания'
+'Is Active': Активно
+'Is published': Опубликовано
+'Save changes': 'Сохранить изменения'
+Apply: Применить
+Filters: Фильтры
+Value: Значение
+Edit: Редактировать
+Reset: Сбросить
+Show: Показать
+Hide: Скрыть
+Delete: Удалить
+Cancel: Отмена
+Roles: 'Уровни доступа'
+Title: Заголовок
+'Full name': ФИО
+Phone: Телефон
+Address: Адрес
+'Zip code': 'Почтовый индекс'
+'Is Deleted': 'Удалено'
+Price: Цена
+Quantity: Количество
+Cover: Обложка
+Preview: Анонс
+Description: Описание
+'Preview image': 'Изображение анонса'
+'Detail image': 'Детальное изображения'
+'Choose new image': 'Выберите новое изображение'
+'Is Published': 'Опубликовано'
+Category: Категория
+'Please select a category': 'Пожалуйста, выберите категорию'
+Status: Статус
+User: Пользователь
+Admin: Администратор
+'Super Admin': 'Супер Администратор'
+Created: Создан
+Denied: Отклонен
+Delivered: Доставлен
+Complected: Укомплектован
+Processed: Обработан
+Id: ID
+Owner: Владелец
+'Total price': 'Общая стоимость'
+From: От
+'Created at': Создан
+To: Для
+'Are you sure?': 'Вы уверены?'
+'Element will be deleted': 'Элемент будет удален'

@@ -1,0 +1,7 @@
+App\Entity\User:
+  user_1:
+    email: admin@example.com
+    # password decoded: test1test1 | add "\" before "$"
+    password: '\$2y\$13\$FGkTIKTGahgHHQjXst/KPenIr1bsLjXbyTlYN8vShWtZD4D8cEPCK'
+    isVerified: 1
+    roles: '[ROLE_SUPER_ADMIN]'

@@ -1,0 +1,55 @@
+{% extends 'front/email/base.html.twig' %}
+
+{% block content %}
+    <row>
+        <columns>
+            <spacer size="35"></spacer>
+            <center>
+                <h1>{{ site_name }} - Заказ оформлен. Спасибо за покупку!</h1>
+            </center>
+            <spacer size="10"></spacer>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <p>
+                Заказ оформлен. Спасибо за покупку! Менеджер свяжется с вами в ближайшее время.
+            </p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <center>
+                <h2>Данные заказа: </h2>
+            </center>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Название</td>
+                        <td>Количество</td>
+                        <td>Стоимость</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for orderProduct in order.orderProducts %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ orderProduct.product.title }}</td>
+                            <td>{{ orderProduct.quantity }}</td>
+                            <td>{{ orderProduct.product.price }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <spacer size="10"></spacer>
+            <p>
+                <strong>Итого: {{ order.totalPrice }}</strong>
+            </p>
+        </columns>
+    </row>
+{% endblock %}

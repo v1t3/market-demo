@@ -1,0 +1,19 @@
+{% apply inky_to_html|inline_css(source('@public' ~ asset('build/email.css'))) %}
+    <container>
+        <row class="header">
+            <columns>
+                <a href="{{ url('main_homepage') }}">
+                    <center>
+                        {{ render(controller('App\\Controller\\EmbedController::showSiteLogo')) }}
+                    </center>
+                </a>
+            </columns>
+        </row>
+
+        {% block content %}{% endblock %}
+
+        <spacer size="20"></spacer>
+
+        <row class="footer"></row>
+    </container>
+{% endapply %}
